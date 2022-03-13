@@ -36,15 +36,15 @@ namespace NETCoreEFCoreRelationships
             //    AddNewChampionshipToFederation(context);
             //}
 
-            using (DataContext context = new DataContext())
-            {
-                RemoveChampionshipFromFederation(context);
-            }
-
             //using (DataContext context = new DataContext())
             //{
-            //    ChangeChampionshipFromFederation(context);
+            //    RemoveChampionshipFromFederation(context);
             //}
+
+            using (DataContext context = new DataContext())
+            {
+                ChangeChampionshipFromFederation(context);
+            }
 
 
             Console.WriteLine("Hello World!");
@@ -54,8 +54,8 @@ namespace NETCoreEFCoreRelationships
         {
             Championship champ = new Championship()
             {
-                ID = 4,
-                FederationID = 2                
+                ID = 1,
+                FederationID = 1                
             };
 
             context.Championships.Attach(champ);
@@ -194,7 +194,7 @@ namespace NETCoreEFCoreRelationships
         {
             Federation fed = new Federation()
             {
-                Name = "CBF"
+                Name = "UEFA"
             };
 
             context.Federations.Add(fed);

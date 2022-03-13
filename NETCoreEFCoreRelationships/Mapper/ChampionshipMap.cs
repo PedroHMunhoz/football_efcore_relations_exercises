@@ -17,7 +17,7 @@ namespace NETCoreEFCoreRelationships.Mapper
                 UseMySqlIdentityColumn();
 
             builder.Property(x => x.Name)
-                .IsRequired()
+                .IsRequired(false)
                 .HasMaxLength(100);
 
             builder.HasOne(x => x.Federation)
